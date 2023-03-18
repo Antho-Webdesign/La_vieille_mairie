@@ -1,8 +1,8 @@
 from django.db import models
 from django.utils.text import slugify
 
-TVA_1 = 0.1  # TVA de 10%
-TVA_2 = 0.2  # TVA de 20%
+TVA_1 = 0.1
+TVA_2 = 0.2
 
 
 class CategorieMenu(models.Model):
@@ -25,7 +25,7 @@ class ElementMenu(models.Model):
     prix = models.DecimalField(max_digits=5, decimal_places=2)
     categorie = models.ForeignKey(CategorieMenu, on_delete=models.CASCADE)
     slug = models.SlugField(unique=True, editable=False)
-    tva_choice = models.CharField(max_length=5, default=TVA_1, choices=[(TVA_1, 'TVA 10%'), (TVA_2, 'TVA 20%')])
+    tva_choice = models.CharField(max_length=5, default='0.1', choices=[('0.1', '10%'), ('0.2', '20%')])
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.nom)

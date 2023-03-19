@@ -43,6 +43,7 @@ class Client(models.Model):
 
     def __str__(self):
         return self.nom
+        
 
 class Reservation(models.Model):
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
@@ -52,6 +53,7 @@ class Reservation(models.Model):
 
     def __str__(self):
         return f"{self.client.nom} - {self.date} {self.heure}"
+        
 
 class Menu(models.Model):
     nom = models.CharField(max_length=100)

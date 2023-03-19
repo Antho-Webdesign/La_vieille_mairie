@@ -36,8 +36,6 @@ class ElementMenu(models.Model):
 
 
 '''
-from django.db import models
-
 class Client(models.Model):
     nom = models.CharField(max_length=100)
     email = models.EmailField()
@@ -71,13 +69,15 @@ class Commande(models.Model):
     def __str__(self):
         return f"{self.reservation.client.nom} - {self.menu.nom} ({self.quantite})"
 
-class Facture(models.Model):
+
+class Commande(models.Model):
     reservation = models.ForeignKey(Reservation, on_delete=models.CASCADE)
-    total = models.DecimalField(max_digits=7, decimal_places=2)
-    taxes = models.DecimalField(max_digits=5, decimal_places=2)
-    pourboire = models.DecimalField(max_digits=5, decimal_places=2)
+    menu = models.ForeignKey(Menu, on_delete=models.CASCADE)
+    quantite = models.IntegerField()
+    facture = models.ForeignKey(Facture, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.reservation.client.nom} - {self.total}"
+        return f"{self.reservation.client.nom} - {self.menu.nom} ({self.quantite})"
+
 
 '''

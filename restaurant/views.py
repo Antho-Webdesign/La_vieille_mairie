@@ -1,30 +1,26 @@
 from django.shortcuts import render
-from django.views import generic
-from django.views.generic import ListView
 
 from restaurant.models import CategorieMenu
 
 
-class Header(generic.ListView):
-    model = CategorieMenu
-    template_name = 'includes/header.html'
-
-    def get_queryset(self):
-        return CategorieMenu.objects.all()
-
-
-def base(request):
-    categorie = CategorieMenu.objects.all()
-    context = {
-        'categories': categorie,
-    }
-    return render(request, 'includes/header.html', context)
-
-
-# Create your views here.
 def index(request):
     categorie = CategorieMenu.objects.all()
     context = {
         'categories': categorie,
     }
     return render(request, 'restaurant/index.html', context)
+
+
+'''
+
+class CategorieMenuListView(generic.ListView):
+    model = CategorieMenu
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get the context
+        context = super(CategorieMenuListView, self).get_context_data(**kwargs)
+        # Create any data and add it to the context
+        context['categories'] = categories
+        return context
+
+'''

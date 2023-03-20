@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from django.utils.text import slugify
 
 TVA_1 = 0.1
@@ -17,6 +18,15 @@ class CategorieMenu(models.Model):
     def __str__(self):
         return self.nom
 
+    # Metadata
+    class Meta:
+        ordering = ['nom']
+        verbose_name_plural = 'CategoriesMenu'
+
+    def get_absolute_url(self):
+        """Returns the url to access a particular instance of the model."""
+        return reverse('categorie', args=[str(self.id)])
+
 
 class ElementMenu(models.Model):
     nom = models.CharField(max_length=100)
@@ -33,6 +43,10 @@ class ElementMenu(models.Model):
 
     def __str__(self):
         return self.nom
+
+    class Meta:
+        ordering = ['nom']
+        verbose_name_plural = 'ElementsMenu'
 
 
 '''

@@ -1,8 +1,7 @@
 from django.urls import path
-
-from restaurant.views import index, Header
+from restaurant.views import index
 
 urlpatterns = [
     path('', index, name='index'),
-    path('categorie/', Header.as_view(), name='header'),
+    # path('categorie/', Header.as_view(), name='header'),
 ]

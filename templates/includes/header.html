@@ -16,18 +16,20 @@
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
+                            <a class="nav-link" href="#">À Propos</a>
                         </li>
                         <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            <button class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">
-                                Dropdown button
+                                Catégorie
                             </button>
                             <ul class="dropdown-menu">
 
                                 <li>
                                     {% for cat in categories %}
-                                    <a class="dropdown-item" href="#">{{ cat.nom }}</a>
+                                        <a class="dropdown-item" href="#">
+                                            {{ cat.nom }}
+                                        </a>
                                     {% endfor %}
                                 </li>
 

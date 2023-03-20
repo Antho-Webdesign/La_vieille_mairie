@@ -1,12 +1,16 @@
 from django.shortcuts import render
+from django.views import generic
 from django.views.generic import ListView
 
 from restaurant.models import CategorieMenu
 
 
-class Header(ListView):
+class Header(generic.ListView):
     model = CategorieMenu
-    template_engine = 'header'
+    template_name = 'includes/header.html'
+
+    def get_queryset(self):
+        return CategorieMenu.objects.all()
 
 
 def base(request):
@@ -19,4 +23,8 @@ def base(request):
 
 # Create your views here.
 def index(request):
-    return render(request, 'restaurant/index.html')
+    categorie = CategorieMenu.objects.all()
+    context = {
+        'categories': categorie,
+    }
+    return render(request, 'restaurant/index.html', context)

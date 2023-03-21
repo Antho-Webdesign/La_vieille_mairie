@@ -11,6 +11,10 @@ def index(request):
     return render(request, 'restaurant/index.html', context)
 
 
+def plat(request):
+    return render(request, 'restaurant/plats.html')
+
+
 '''
 
 class CategorieMenuListView(generic.ListView):

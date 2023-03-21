@@ -324,12 +324,12 @@
     <!--header html-->
     <div id="conteneur">
         <!--titre-->
-        <h2 class="titre">Le chic à la française</h2>
+        <h2 class="titre">La Vieille Mairie</h2>
         <div id="carte-m2">
             <!--titre-->
             <!--titre couleur-->
             <section class="titrecouleurm2">
-                <h2 class="gradient-m2">Le chic à la francaise</h2>
+                <h2 class="gradient-m2">Menu Express</h2>
             </section>
             <!--titre couleur-->
 
@@ -342,9 +342,15 @@
                     <div class="separateur"></div>
                 </div>
                 <ul class="ul-m2">
-                    <li class="li-m2-1">Tartare de poulpe acidulé aux zests d’oranges<span class="prix">79€</span></li>
-                    <li class="li-m2-1">Velouté de légumes d’antan<span class="prix">57€</span></li>
-                    <li class="li-m2-1">Soupe à l’oignon revisitée<span class="prix">57€</span></li>
+                    {% for element in elements %}
+                        <li class="li-m2-1">{{ element.nom }}: {{ element.description }}<span
+                                class="prix">{{ element.prix }}</span></li>
+                    {% endfor %}
+                    <!--
+                        <li class="li-m2-1">Tartare de poulpe acidulé aux zests d’oranges<span class="prix">79€</span></li>
+                        <li class="li-m2-1">Velouté de légumes d’antan<span class="prix">57€</span></li>
+                        <li class="li-m2-1">Soupe à l’oignon revisitée<span class="prix">57€</span></li>
+                        -->
                 </ul>
             </section>
             <!--entrée-->

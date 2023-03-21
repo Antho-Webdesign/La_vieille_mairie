@@ -27,9 +27,356 @@
             margin: 10px auto;
         }
 
+
+        /*menu2*/
+/*englobe menu2*/
+#carte-m2 {
+  font-family: 'Parisienne', cursive;
+  background-color: #fdf5fe;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 90%;
+  height: auto;
+  margin: auto;
+  margin-bottom: 80px;
+  padding-top: 50px;
+}
+
+.bloc-page-m2 {
+  background-color: #fff;
+}
+
+#box-m2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+/*englobe menu2*/
+/*titre coloré menu2*/
+.titrecouleurm2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+}
+
+.gradient-m2 {
+  text-align: center;
+  font-size: 4em;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
+  width: 100%;
+}
+
+.gradient-m2 {
+  position: relative;
+  color: #000;
+  background: #fff;
+  mix-blend-mode: multiply;
+}
+
+.gradient-m2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: -webkit-gradient(linear, left top, right bottom, from(#c77800), color-stop(#c77800), color-stop(#ba68c8), color-stop(#ba68c8), to(#3f51b5));
+  background: linear-gradient(to right bottom, #c77800, #c77800, #ba68c8, #ba68c8, #3f51b5);
+  mix-blend-mode: screen;
+}
+
+/*titre coloré menu2*/
+/*communs menu2*/
+.entree-m2 .plat-m2 .dessert-m2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 3%;
+}
+
+.englobe-m2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  width: 100%;
+  margin: 70px auto;
+    align-items: center;
+}
+
+.icon-m2,
+.icon-m2-2 {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: middle;
+  width: 33%;
+  height: 25px;
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin: auto;
+}
+
+.icon-m2-2 {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.m-2,
+.m-3,
+.m-4 {
+  margin: auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: lighter;
+  -webkit-text-size-adjust: auto;
+}
+
+.li-m2-1,
+.li-m2-2,
+.li-m2-3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 20px;
+}
+
+.li-m2-1 {
+  color: #c77800;
+}
+
+.li-m2-2 {
+  color: #ba68c8;
+}
+
+.li-m2-3 {
+  color: #3f51b5;
+}
+
+/*communs menu2*/
+/*entree menu2*/
+.ul-m2 {
+  font-size: 1.9em;
+  padding: 0;
+  margin: 60px;
+  list-style: none;
+}
+
+.trait:after {
+  content: '';
+  display: block;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 0;
+  background: transparent;
+  -webkit-transition: width .7s ease, background-color .7s ease;
+  transition: width .7s ease, background-color .7s ease;
+}
+
+.trait:hover:after {
+  width: 100%;
+  background: -webkit-gradient(linear, left top, right top, from(#c77800), color-stop(#c77800), color-stop(#faaa54), color-stop(#ba68c8), color-stop(#9c6996), to(#8559da));
+  background: linear-gradient(to right, #c77800, #c77800, #faaa54, #ba68c8, #9c6996, #8559da);
+}
+
+.m-2 {
+  color: #c77800;
+}
+
+/*entree menu2*/
+/*plats menu2*/
+.m-3 {
+  color: #ba68c8;
+}
+
+/*plats menu2*/
+/*desserts menu2*/
+.m-4 {
+  color: #8559da;
+}
+
+/*desserts menu2*/
+/*listes des plats menu2*/
+/*menu2 responsive*/
+@media (max-width: 980px) {
+  #container-m-2 {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+  #carte-m2 {
+    width: 90%;
+    height: auto;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+  }
+  .gradient-m2 {
+    font-size: 3em;
+  }
+  .trait:after {
+    -webkit-transition: none;
+    transition: none;
+  }
+  .m-2,
+  .m-3,
+  .m-4 {
+    margin: 20px auto;
+    font-size: 1.5em;
+    width: auto;
+  }
+  .englobe-m2 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 50px;
+  }
+  .icon-m2,
+  .icon-m2-2 {
+    width: 30%;
+  }
+  .icon-m2 {
+    -webkit-transform: none;
+            transform: none;
+  }
+  .ul-m2 {
+    font-size: 1.7em;
+    margin: auto;
+    padding: 5px;
+  }
+  .li-m2-1,
+  .li-m2-2,
+  .li-m2-3 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    text-align: center;
+  }
+}
+
+/*menu2 responsive*/
+
+
     </style>
 
     <!-- TODO: utiliser la carte du projet openclassrooms -->
+
+    <!--container-->
+   <!--header html-->
+  <div id="conteneur">
+    <!--titre-->
+    <h2 class="titre">Le chic à la française</h2>
+    <div id="carte-m2">
+      <!--titre-->
+      <!--titre couleur-->
+      <section class="titrecouleurm2">
+        <h2 class="gradient-m2">Le chic à la francaise</h2>
+      </section>
+      <!--titre couleur-->
+
+      <!--entrée-->
+      <section class="entree-m2">
+        <div class="englobe-m2">
+            <div class="separateur"></div>
+         <!-- <img class="icon-m2" src="" alt=""> -->
+          <h2 class="m-2"><span class="trait">Pour se mettre en appétit</span></h2>
+         <div class="separateur"></div>
+        </div>
+        <ul class="ul-m2">
+          <li class="li-m2-1">Tartare de poulpe acidulé aux zests d’oranges<span class="prix">79€</span></li>
+          <li class="li-m2-1">Velouté de légumes d’antan<span class="prix">57€</span></li>
+          <li class="li-m2-1">Soupe à l’oignon revisitée<span class="prix">57€</span></li>
+        </ul>
+      </section>
+      <!--entrée-->
+
+      <!--plats-->
+      <section class="plat-m2">
+        <div class="englobe-m2">
+         <div class="separateur"></div>
+          <h2 class="m-3"><span class="trait">Plaisir des papilles</span></h2>
+          <div class="separateur"></div>
+        </div>
+        <ul class="ul-m2">
+          <li class="li-m2-2">Coquilles Saint Jacques accompagnées d’une purée de panais<em class="prix">95€</em></li>
+          <li class="li-m2-2">Magret de canard et parmentier de pommes de terres<em class="prix">88€</em></li>
+          <li class="li-m2-2">Pigeonneau d’île et vilaine sur son lit de gnocchis aux legumes<em class="prix">175€</em>
+          </li>
+        </ul>
+      </section>
+      <!--plats-->
+
+      <!--desserts-->
+      <section class="dessert-m2">
+        <div class="englobe-m2">
+         <div class="separateur"></div>
+          <h2 class="m-4"><span class="trait">Gourmandises sucrées</span></h2>
+          <div class="separateur"></div>
+        </div>
+        <ul class="ul-m2">
+          <li class="li-m2-3">Pétales de glacés et purée de noisettes</li>
+          <li class="li-m2-3">Fondant au chocolat revisité</li>
+          <li class="li-m2-3">Millefeuille croustillant</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+  <!--desserts-->
+  <!--container-->
 
     {% block title %}<h1 class="text-center m-4">La carte</h1>{% endblock %}
     <div class="carte">

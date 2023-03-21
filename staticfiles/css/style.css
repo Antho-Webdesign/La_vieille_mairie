@@ -89,3 +89,228 @@ header, footer {
     vertical-align: -.125em;
     fill: currentColor;
 }
+
+/*menu1*/
+
+.m-1 {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: cursive;
+  text-decoration: none;
+  text-align: center;
+  color: #263238;
+  font-weight: lighter;
+  font-size: 2.5em;
+  -ms-flex-item-align: baseline;
+      align-self: baseline;
+  margin: auto;
+}
+
+
+.prix {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.carte-m1 {
+  font-family: 'Neucha', cursive;
+  width: 90%;
+  height: auto;
+  margin: auto;
+  margin-bottom: 80px;
+  background-color: #ffebee;
+}
+
+/*haut menu1*/
+.entete {
+  text-align: center;
+  padding-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.note1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  width: 120px;
+  height: 120px;
+}
+
+.titrem1 {
+  font-size: 4em;
+  color: #3e2723;
+  margin: 30px 0px;
+  font-weight: lighter;
+}
+
+/*haut menu1*/
+/*listes des plats menu1*/
+.essaie {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 0;
+  width: 100%;
+}
+
+.separateur-m1 {
+  width: 33%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+  height: 70px;
+  margin: auto;
+}
+
+li {
+  color: #424242;
+}
+
+/*listes des plats menu1*/
+/*animation soulignement des titres*/
+.traitm1:after {
+  content: '';
+  display: block;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 0;
+  background: transparent;
+  -webkit-transition: width .7s ease, background-color .7s ease;
+  transition: width .7s ease, background-color .7s ease;
+}
+
+.traitm1:hover:after {
+  width: 100%;
+  background: -webkit-gradient(linear, left top, right top, from(#3e2723), color-stop(#4e342e), color-stop(#6d4c41), color-stop(#8d6e63), color-stop(#8d6e63), to(#bcaaa4));
+  background: linear-gradient(to right, #3e2723, #4e342e, #6d4c41, #8d6e63, #8d6e63, #bcaaa4);
+  -webkit-transition: width .7s ease, background-color .7s ease;
+  transition: width .7s ease, background-color .7s ease;
+}
+
+/*animation soulignement des titres*/
+/*bas menu1*/
+.bas-m1 {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  padding-bottom: 30px;
+}
+
+.note2 {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  width: 60px;
+  height: 60px;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.fin {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #4e342e;
+  font-size: 2em;
+}
+
+/*bas menu1*/
+/*menu1 responsive*/
+@media screen and (max-width: 980px) {
+  .title-m1 {
+    margin: auto;
+    width: auto;
+  }
+  #container-m1 {
+    width: 100%;
+    margin: 0;
+    height: auto;
+  }
+  .titrem1 {
+    font-size: 3em;
+  }
+  .traitm1:after {
+    -webkit-transition: none;
+    transition: none;
+  }
+  .prix {
+    float: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: center;
+    margin: auto;
+    margin-top: 8px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .essaie {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: auto;
+  }
+  .title {
+    width: 100%;
+    margin: auto;
+  }
+  .separateur-m1 {
+    width: 15%;
+    height: 30px;
+  }
+  .carte-m1 {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+  .fin {
+    font-size: 1.8em;
+  }
+  .titre {
+    margin: 10px auto;
+  }
+}
+
+/*menu1 responsive*/

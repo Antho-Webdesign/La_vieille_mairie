@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <style>
+
+        .carte {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: auto;
+            background: #bf6910;
+            width: 33%;
+            text-align: center;
+        }
+
+        .element {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .separateur {
+            border-bottom: solid 1px;
+            width: 33%;
+            display: flex;
+            justify-content: center;
+            margin: 10px auto;
+        }
+
+    </style>
+
+    <!-- TODO: utiliser la carte du projet openclassrooms -->
+
+    {% block title %}<h1 class="text-center m-4">La carte</h1>{% endblock %}
+    <div class="carte">
+        <h2>LVM</h2>
+
+        {% for element in elements %}
+            <div class="element">
+                <p class="text-primary">{{ element.nom }} <span class="text-secondary">{{ element.prix }}€</span></p>
+                <p>{{ element.description }}</p>
+                <div class="separateur"></div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

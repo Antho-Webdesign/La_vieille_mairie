@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from restaurant.models import CategorieMenu
+from restaurant.models import CategorieMenu, ElementMenu
 
 
 def index(request):
@@ -13,6 +13,14 @@ def index(request):
 
 def plat(request):
     return render(request, 'restaurant/plats.html')
+
+
+def carte(request):
+    element = ElementMenu.objects.all()
+    context = {
+        'elements': element,
+    }
+    return render(request, 'restaurant/la_carte.html', context)
 
 
 '''

@@ -2,77 +2,386 @@
 {% load static %}
 
 {% block content %}
+    <style>
+
+        a {
+            text-decoration: none;
+        }
+
+        h1 {
+            font-family: "Open Sans", sans-serif;
+            font-weight: 300;
+        }
+
+        .row {
+            max-width: 900px;
+            margin: 50px auto 0;
+        }
+
+        .card {
+            float: left;
+            padding: 0 1.7rem;
+            width: 50%;
+        }
+
+        .card .menu-content {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .card .menu-content::before, .card .menu-content::after {
+            content: "";
+            display: table;
+        }
+
+        .card .menu-content::after {
+            clear: both;
+        }
+
+        .card .menu-content li {
+            display: inline-block;
+        }
+
+        .card .menu-content a {
+            color: #fff;
+        }
+
+        .card .menu-content span {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            font-size: 10px;
+            font-weight: 700;
+            font-family: "Open Sans", serif;
+            transform: translate(-50%, 0);
+        }
+
+        .card .wrapper {
+            background-color: #fff;
+            min-height: 540px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .card .wrapper:hover .data {
+            transform: translateY(0);
+        }
+
+        .card .data {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            transform: translateY(calc(70px + 1em));
+            transition: transform 0.3s;
+        }
+
+        .card .data .content {
+            padding: 1em;
+            position: relative;
+
+            z-index: 1;
+        }
+
+        .card .author {
+            font-size: 12px;
+        }
+
+        .card .title {
+            margin-top: 10px;
+        }
+
+        .card .text {
+            height: 70px;
+            margin: 0;
+        }
+
+        .card input[type=checkbox] {
+            display: none;
+        }
+
+        .card input[type=checkbox]:checked + .menu-content {
+            transform: translateY(-60px);
+        }
+
+        .example-1 .wrapper {
+            background: url(https://brasserie-surplace.be/img/gallery/surplace-02-large.jpg) center/cover no-repeat; /*20% 1%/cover no-repeat*/
+        }
+
+        .example-1 .date {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #77d7b9;
+            color: #fff;
+            padding: 0.8em;
+        }
+
+        .example-1 .date span {
+            display: block;
+            text-align: center;
+        }
+
+        .example-1 .date .day {
+            font-weight: 700;
+            font-size: 24px;
+            text-shadow: 2px 3px 2px rgba(0, 0, 0, 0.18);
+        }
+
+        .example-1 .date .month {
+            text-transform: uppercase;
+        }
+
+        .example-1 .date .month,
+        .example-1 .date .year {
+            font-size: 12px;
+        }
+
+        .example-1 .content {
+            background-color: #fff;
+            box-shadow: 0 5px 30px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .example-1 .title a {
+            color: gray;
+        }
+
+        .example-1 .menu-button {
+            position: absolute;
+            z-index: 999;
+            top: 16px;
+            right: 16px;
+            width: 25px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .example-1 .menu-button span {
+            width: 5px;
+            height: 5px;
+            background-color: gray;
+            color: gray;
+            position: relative;
+            display: inline-block;
+            border-radius: 50%;
+        }
+
+        .example-1 .menu-button span::after, .example-1 .menu-button span::before {
+            content: "";
+            display: block;
+            width: 5px;
+            height: 5px;
+            background-color: currentColor;
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .example-1 .menu-button span::before {
+            left: -10px;
+        }
+
+        .example-1 .menu-button span::after {
+            right: -10px;
+        }
+
+        .example-1 .menu-content {
+            text-align: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: -1;
+            transition: transform 0.3s;
+            transform: translateY(0);
+        }
+
+        .example-1 .menu-content li {
+            width: 33.333333%;
+            float: left;
+            background-color: #77d7b9;
+            height: 60px;
+            position: relative;
+        }
+
+        .example-1 .menu-content a {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+        }
+
+        .example-1 .menu-content span {
+            top: -10px;
+        }
+
+        .example-2 .wrapper {
+            background: url(https://www.restaurantmonauberge.fr/wp-content/uploads/2020/03/a-emporter-1.png) center/cover no-repeat;
+        }
+
+        .example-2 .wrapper:hover .menu-content span {
+            transform: translate(-50%, -10px);
+            opacity: 1;
+        }
+
+        .example-2 .header {
+            color: #fff;
+            padding: 1em;
+        }
+
+        .example-2 .header::before, .example-2 .header::after {
+            content: "";
+            display: table;
+        }
+
+        .example-2 .header::after {
+            clear: both;
+        }
+
+        .example-2 .header .date {
+            float: left;
+            font-size: 12px;
+        }
+
+        .example-2 .menu-content {
+            float: right;
+        }
+
+        .example-2 .menu-content li {
+            margin: 0 5px;
+            position: relative;
+        }
+
+        .example-2 .menu-content span {
+            transition: all 0.3s;
+            opacity: 0;
+        }
+
+        .example-2 .data {
+            color: #fff;
+            transform: translateY(calc(70px + 4em));
+        }
+
+        .example-2 .title a {
+            color: #fff;
+        }
+
+        .example-2 .button {
+            display: block;
+            width: 100px;
+            margin: 2em auto 1em;
+            text-align: center;
+            font-size: 12px;
+            color: #fff;
+            line-height: 1;
+            position: relative;
+            font-weight: 700;
+        }
+
+        .example-2 .button::after {
+            content: "→";
+            opacity: 0;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+            transition: all 0.3s;
+        }
+
+        .example-2 .button:hover::after {
+            transform: translate(5px, -50%);
+            opacity: 1;
+        }
+
+        /* add */
+        .card {
+            /* float: left; */
+            padding: 0;
+            /* width: 50%; */
+            width: 45%;
+            display: flex;
+            min-width: 150px;
+            margin: auto;
+        }
+
+        .row {
+            margin: 50px auto;
+            max-width: none;
+            display: flex;
+            width: 90%;
+        }
+
+        .titre1 {
+            font-size: 3em;
+        }
+
+    </style>
     <!-- Titre1 -->
     <div class="hero">
-        <h1 class="titre1 text-center text-light">La Vieille Mairie</h1>
+        <h1 class="titre1 text-center text-light fw-bold">La Vieille Mairie</h1>
+    <p class="text-center text-light fst-italic">13 Rue des Alpes, 38530 Pontcharra, France</p>
+    <p class="text-center">
+        <a class="btn btn-info" href="tel:0476719863">Appeler</a>
+    </p>
     </div>
 
-    <!-- Categories liste -->
-    <div class="container px-4 py-5" id="custom-cards">
-        <h2 class="pb-2 border-bottom">Categories</h2>
+    <div class="row">
+        <div class="example-1 card">
+            <div class="wrapper">
+                <div class="date">
+                    <span class="day">60</span>
+                    <span class="month">Places</span>
+                    <span class="year">sur place</span>
+                </div>
+                <div class="data">
+                    <div class="content">
+                        <span class="author">Je choisis</span>
+                        <h1 class="title">
+                            <a href="#">Sur Place</a>
+                        </h1>
+                        <p class="text">Venez vous installer dans un endroit chaleureux</p>
+                        <label for="show-menu" class="menu-button"><span></span></label>
+                    </div>
+                    <input type="checkbox" id="show-menu"/>
+                    <ul class="menu-content">
+                        <li>
+                            <a href="#" class="fa fa-bookmark-o"></a>
+                        </li>
+                        <li><a href="#" class="fa fa-heart-o"><span>47</span></a></li>
+                        <li><a href="#" class="fa fa-comment-o"><span>8</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
-        <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-
-            <!-- Card 1 -->
-            <div class="col">
-                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
-                     style="background-image: url('https://media-cdn.tripadvisor.com/media/photo-s/1b/ca/2d/6a/20200814-232925-largejpg.jpg');">
-                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                        <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold text-info">Sur Place</h2>
-
-                        <ul class="d-flex list-unstyled mt-auto">
-                            <li class="me-auto">
-                                <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32"
-                                     class="rounded-circle border border-white">
-                            </li>
-                            <li class="d-flex align-items-center me-3">
-                                <svg class="bi me-2" width="1em" height="1em">
-                                    <use href="#geo-fill"></use>
-                                </svg>
-                                <small class="text-danger">Reserver</small>
-                            </li>
-                            <li class="d-flex align-items-center">
-                                <svg class="bi me-2" width="1em" height="1em">
-                                    <use href="#calendar3"></use>
-                                </svg>
-                                <small>3d</small>
-                            </li>
-                        </ul>
-
+        <div class="example-2 card">
+            <div class="wrapper">
+                <div class="header">
+                    <div class="date">
+                        <span class="day">12</span>
+                        <span class="month">Aug</span>
+                        <span class="year">2016</span>
+                    </div>
+                    <ul class="menu-content">
+                        <li>
+                            <a href="#" class="fa fa-bookmark-o"></a>
+                        </li>
+                        <li><a href="#" class="fa fa-heart-o"><span>18</span></a></li>
+                        <li><a href="#" class="fa fa-comment-o"><span>3</span></a></li>
+                    </ul>
+                </div>
+                <div class="data">
+                    <div class="content">
+                        <span class="author">Je choisis</span>
+                        <h1 class="title">
+                            <a href="#">À Emporter</a>
+                        </h1>
+                        <p class="text">Vous n'avez pas le temps, notre service a emporter est fait pour vous!</p>
+                        <a href="#" class="button">Read more</a>
                     </div>
                 </div>
             </div>
-
-            <!-- Card 2 -->
-            <div class="col">
-
-                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
-                     style="background-image: url('https://media-cdn.tripadvisor.com/media/photo-s/1a/c6/90/12/photo1jpg.jpg');">
-                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                        <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold text-info">À Emporter</h2>
-                        <ul class="d-flex list-unstyled mt-auto">
-                            <li class="me-auto">
-                                <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32"
-                                     class="rounded-circle border border-white">
-                            </li>
-                            <li class="d-flex align-items-center me-3">
-                                <svg class="bi me-2" width="1em" height="1em">
-                                    <use href="#geo-fill"></use>
-                                </svg>
-                                <small class="text-danger">Appeler</small>
-                            </li>
-                            <li class="d-flex align-items-center">
-                                <svg class="bi me-2" width="1em" height="1em">
-                                    <use href="#calendar3"></use>
-                                </svg>
-                                <small>4d</small>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-
         </div>
     </div>
 
